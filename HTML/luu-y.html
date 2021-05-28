@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lưu ý về HTML</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tool tip, title cho thẻ -->
+    <h1 title="Đây là thẻ H1 các bạn nhé">Hello</h1>
+
+    <!-- Danh sách: list -->
+    <!-- 
+      Lưu ý: Thẻ ul, ol chỉ được chứa con trực tiếp là li
+      Muốn đặt thẻ khác trong ul, thì phải đặt trong li
+      list-style -> list-style-type, list-style-position
+    -->
+    <ul style="list-style: circle; list-style-position: inside">
+      <li>
+        Hello
+        <ul>
+          <li>Hello</li>
+          <li>Hello</li>
+        </ul>
+      </li>
+      <li>Hello</li>
+    </ul>
+    <ol>
+      <li>Hello</li>
+      <li>Hello</li>
+    </ol>
+    <!-- Thẻ span, thẻ div: phân chia bố cục, tức là những nội dung có ý nghĩa,nên đặt trong thẻ có ý nghĩa tương ứng -->
+    <!-- Thẻ span là inline, div là block
+      inline: Không thể set width, height, không thể dùng margin-top, margin-bottom, padding-top, padding-bottom
+      Muốn dùng margin, padding cho thẻ inline -> display: inline-block hoặc block
+    -->
+    <span>span</span>
+    <div>div</div>
+    <!-- FORM -->
+    <!-- Thẻ form -> Dùng để validate (kiểm tra) giá trị các phần tử khi submit -->
+    <!-- Các phần tử, thẻ trong form -->
+    <input type="text" name="fullname" />
+    <input type="email" name="email" />
+    <input type="password" name="password" />
+    <select name="fruit" id="">
+      <option value="1">Xoai</option>
+      <option value="2">Chuoi</option>
+    </select>
+    <textarea
+      style="resize: horizontal; max-width: 600px"
+      name="comment"
+    ></textarea>
+    <div>
+      <input type="checkbox" name="" id="term" />
+      <label for="term">Đồng ý điều khoản</label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" name="" />
+        Đồng ý điều khoản
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="" />
+        Nam
+      </label>
+    </div>
+    <div>
+      <button type="button">Button</button>
+      <button type="submit">Button</button>
+      <button type="reset">Button</button>
+    </div>
+
+    <form id="form">
+      <div>
+        <label>
+          <span>Ho ten</span>
+          <input type="text" required name="fullname" id="" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Email</span>
+          <input type="email" required name="email" id="" />
+        </label>
+      </div>
+      <div>
+        <button type="submit">Nop</button>
+      </div>
+    </form>
+    <script>
+      document.getElementById("form").addEventListener("submit", (event) => {
+        event.preventDefault(); // chặn việc mặc định event làm
+        console.log({ event });
+      });
+    </script>
+  </body>
+</html>
